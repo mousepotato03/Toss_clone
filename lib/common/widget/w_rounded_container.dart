@@ -22,6 +22,5 @@ class RoundedContainer extends StatelessWidget {
             color: backgroundColor ?? context.appColors.roundedLayoutBackground,
             borderRadius: BorderRadius.circular(radius)),
         child: child);
-    ;
   }
 }

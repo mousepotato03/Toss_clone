@@ -40,6 +40,7 @@ class AppState extends State<App> with Nav, WidgetsBindingObserver {
       child: Builder(builder: (context) {
         return MaterialApp(
           navigatorKey: App.navigatorKey,
+          debugShowCheckedModeBanner: false,
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
