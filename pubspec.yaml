@@ -107,6 +107,7 @@ flutter:
   assets:
     - assets/json/
     - assets/image/
+    - assets/image/notification/
     - assets/image/illustration/
     - assets/image/credit_card/
     - assets/image/stock/
