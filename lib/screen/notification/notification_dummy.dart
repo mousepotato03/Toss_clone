@@ -12,11 +12,13 @@ final notificationDummies = <TossNotification>[
     NotificationType.stock,
     "인적분할에 대해 알려드릴게요.",
     DateTime.now().subtract(1.hours),
+    isRead: true,
   ),
   TossNotification(
     NotificationType.walk,
     "1000걸음 이상 걸었다면 포인트를 받으세요.",
     DateTime.now().subtract(1.hours),
+    isRead: true,
   ),
   TossNotification(
     NotificationType.moneyTip,
