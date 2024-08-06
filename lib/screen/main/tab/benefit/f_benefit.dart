@@ -1,5 +1,4 @@
 import 'package:fast_app_base/common/common.dart';
-import 'package:fast_app_base/screen/main/s_main.dart';
 import 'package:fast_app_base/screen/main/tab/benefit/benefit_dummy.dart';
 import 'package:fast_app_base/screen/main/tab/benefit/w_benefit_item.dart';
 import 'package:fast_app_base/screen/main/tab/benefit/w_point_button.dart';

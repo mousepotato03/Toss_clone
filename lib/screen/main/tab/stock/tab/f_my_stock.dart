@@ -1,6 +1,7 @@
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/common/widget/w_arrow.dart';
 import 'package:fast_app_base/common/widget/w_rounded_container.dart';
+import 'package:fast_app_base/screen/main/tab/stock/tab/w_interest_stock_list.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../common/widget/w_long_button.dart';
@@ -53,35 +54,41 @@ class MyStockFragment extends StatelessWidget {
       );
 
   Widget getMyStocks(BuildContext context) => Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
         color: context.appColors.roundedLayoutBackground,
         child: Column(children: [
           height30,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              '관심주식'.text.white.bold.make(),
-              '편집하기'.text.color(context.appColors.lessImportant).make(),
-            ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                '관심주식'.text.white.bold.make(),
+                '편집하기'.text.color(context.appColors.lessImportant).make(),
+              ],
+            ),
           ),
           height20,
-          Tap(
-            onTap: (){
-              context.showSnackbar("기본");
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  "기본".text.white.bold.make(),
-                  Arrow(
-                    direction: AxisDirection.up,
-                  )
-                ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Tap(
+              onTap: (){
+                context.showSnackbar("기본");
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    "기본".text.white.bold.make(),
+                    Arrow(
+                      direction: AxisDirection.up,
+                    )
+                  ],
+                ),
               ),
             ),
-          )
+          ),
+          InteresStockList(),
         ]),
       );
 }

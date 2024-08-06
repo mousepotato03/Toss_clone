@@ -1,5 +1,4 @@
 import 'package:fast_app_base/common/common.dart';
-import 'package:fast_app_base/common/theme/custom_theme.dart';
 import 'package:fast_app_base/screen/notification/d_notification.dart';
 import 'package:fast_app_base/screen/notification/notification_dummy.dart';
 import 'package:fast_app_base/screen/notification/w_notification_Item.dart';
