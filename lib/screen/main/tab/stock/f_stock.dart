@@ -24,12 +24,12 @@ class _StockFragmentState extends State<StockFragment> with SingleTickerProvider
         SliverAppBar(
           pinned: true,
           backgroundColor: context.appColors.appBarBackground,
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: const IconThemeData(color: Colors.white),
           actions: [
             ImageButton(
               imagePath: "$basePath/icon/stock_search.png",
               onTap: () {
-                Nav.push(SearchStockScreen());
+                Nav.push(const SearchStockScreen());
               },
             ),
             ImageButton(
@@ -96,7 +96,7 @@ class _StockFragmentState extends State<StockFragment> with SingleTickerProvider
               '오늘의 발견'.text.white.make(),
             ],
           ),
-          Line(),
+          const Line(),
         ],
       );
 }

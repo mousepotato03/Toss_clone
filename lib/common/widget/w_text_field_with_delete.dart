@@ -141,7 +141,7 @@ class TextFieldWithDeleteState extends State<TextFieldWithDelete> {
                 enabledBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.transparent),
                 ),
-                focusedBorder: UnderlineInputBorder(
+                focusedBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.transparent),
                 ),
               ),
@@ -162,7 +162,7 @@ class TextFieldWithDeleteState extends State<TextFieldWithDelete> {
                                 padding: EdgeInsets.only(right: widget.deleteRightPadding),
                                 child: SvgPicture.asset(
                                   '$basePath/icon/delete_x.svg',
-                                  colorFilter: ui.ColorFilter.mode(
+                                  colorFilter: const ui.ColorFilter.mode(
                                       Colors.white, ui.BlendMode.srcIn),
                                 ),
                               ),

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 
-import '../../../common/common.dart';
 import '../../simple_result.dart';
 
 class ApiError {
@@ -16,7 +16,7 @@ class ApiError {
   });
 
   static createErrorResult(e) {
-    if (e is DioError) {
+    if (e is DioException) {
       if (!kReleaseMode) {
         return SimpleResult.failure(ApiError(
             message: e.error?.toString() ?? e.message ?? 'message is empty',

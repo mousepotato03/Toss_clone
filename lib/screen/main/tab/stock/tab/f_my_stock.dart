@@ -30,15 +30,15 @@ class MyStockFragment extends StatelessWidget {
             Row(
               children: [
                 "443원".text.white.size(24).bold.make(),
-                Arrow(
+                const Arrow(
                   color: Colors.white,
                 ),
                 emptyExpanded,
                 RoundedContainer(
-                  child: "채우기".text.white.size(12).make(),
-                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                   radius: 8,
                   backgroundColor: context.appColors.buttonBackground,
+                  child: "채우기".text.white.size(12).make(),
                 )
               ],
             ),
@@ -47,8 +47,8 @@ class MyStockFragment extends StatelessWidget {
               color: context.appColors.divider,
             ),
             height10,
-            LongButton(title: "주문내역"),
-            LongButton(title: "판매수익")
+            const LongButton(title: "주문내역"),
+            const LongButton(title: "판매수익")
           ],
         ).pSymmetric(h: 20),
       );
@@ -80,7 +80,7 @@ class MyStockFragment extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     "기본".text.white.bold.make(),
-                    Arrow(
+                    const Arrow(
                       direction: AxisDirection.up,
                     )
                   ],
@@ -88,7 +88,7 @@ class MyStockFragment extends StatelessWidget {
               ),
             ),
           ),
-          InteresStockList(),
+          const InteresStockList(),
         ]),
       );
 }

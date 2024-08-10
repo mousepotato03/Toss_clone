@@ -13,7 +13,7 @@ class TossAppBar extends StatefulWidget {
 }
 
 class _TossAppBarState extends State<TossAppBar> {
-  bool _showRedDot = false;
+  final bool _showRedDot = false;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _TossAppBarState extends State<TossAppBar> {
           width10,
           Tap(
             onTap: (){
-              Nav.push(NotificationScreen());
+              Nav.push(const NotificationScreen());
             },
             child: Stack(
               children: [

@@ -1,5 +1,4 @@
 import 'package:fast_app_base/common/util/local_json.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../vo/vo_simple_stock.dart';
@@ -36,7 +35,7 @@ class SearchStockData extends GetxController {
   }
 
   void addHistory(SimpleStock stock) {
-    searchHistoryList.add(stock.name);
+    searchHistoryList.insert(0, stock.name);
   }
 
   void removeHistory(String stockName) {

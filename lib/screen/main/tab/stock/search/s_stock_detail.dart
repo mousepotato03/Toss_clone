@@ -12,8 +12,8 @@ class StockDetailScreen extends StatelessWidget {
       backgroundColor: context.appColors.appBackground,
       appBar: AppBar(
         backgroundColor: context.appColors.appBackground,
-        title: "$stockName".text.white.make(),
-        iconTheme: IconThemeData(color: Colors.white),
+        title: stockName.text.white.make(),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
