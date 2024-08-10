@@ -24,7 +24,7 @@ class _OpensourceScreenState extends State<OpensourceScreen> {
   }
 
   void initData() async {
-    final list = await LocalJson.getObjectList<Package>("json/licenses.json");
+    final list = await LocalJson.getObjectList<Package>("licenses.json");
     setState(() {
       packageList = list;
     });
@@ -34,14 +34,19 @@ class _OpensourceScreenState extends State<OpensourceScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: 'opensource'.tr().text.make(),
+        backgroundColor: context.appColors.appBackground,
+        title: 'opensource'.tr().text.white.make(),
+        iconTheme: IconThemeData(color: Colors.white),
       ),
-      body: ListView.separated(
-        itemBuilder: (context, index) => OpensourceItem(packageList[index]),
-        itemCount: packageList.length,
-        separatorBuilder: (BuildContext context, int index) {
-          return const Line().pSymmetric(h:20);
-        },
+      body: Container(
+        color: context.appColors.appBackground,
+        child: ListView.separated(
+          itemBuilder: (context, index) => OpensourceItem(packageList[index]),
+          itemCount: packageList.length,
+          separatorBuilder: (BuildContext context, int index) {
+            return const Line(color: Colors.white,).pSymmetric(h:20);
+          },
+        ),
       ),
     );
   }
