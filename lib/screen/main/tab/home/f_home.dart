@@ -6,6 +6,9 @@ import 'package:fast_app_base/screen/main/tab/home/bank_accounts_dummy.dart';
 import 'package:fast_app_base/screen/main/tab/home/w_bank_account.dart';
 import 'package:fast_app_base/screen/main/tab/home/w_toss_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:live_background/live_background.dart';
+import 'package:live_background/widget/live_background_widget.dart';
 
 import '../../../../common/widget/w_big_button.dart';
 import '../../../dialog/d_color_bottom.dart';
@@ -22,6 +25,7 @@ class HomeFragment extends StatelessWidget {
       color: context.appColors.appBackground,
       child: Stack(
         children: [
+          const LiveBackgroundWidget(palette: Palette(colors: [Colors.red, Colors.green]),),
           RefreshIndicator(
             edgeOffset: TossAppBar.appBarHeight,
             onRefresh: () async{
@@ -48,7 +52,7 @@ class HomeFragment extends StatelessWidget {
                     ),
                   ),
                 ],
-              ).pSymmetric(h: 20),
+              ).pSymmetric(h: 20).animate().slideY(duration: 1000.ms).fadeIn(),
             ),
           ),
           const TossAppBar(),
