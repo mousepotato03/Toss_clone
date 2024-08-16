@@ -4,6 +4,7 @@ import 'package:fast_app_base/common/widget/w_rounded_container.dart';
 import 'package:fast_app_base/screen/dialog/d_message.dart';
 import 'package:fast_app_base/screen/main/tab/home/bank_accounts_dummy.dart';
 import 'package:fast_app_base/screen/main/tab/home/w_bank_account.dart';
+import 'package:fast_app_base/screen/main/tab/home/w_rive_like_button.dart';
 import 'package:fast_app_base/screen/main/tab/home/w_toss_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -14,10 +15,17 @@ import '../../../../common/widget/w_big_button.dart';
 import '../../../dialog/d_color_bottom.dart';
 import '../../../dialog/d_confirm.dart';
 
-class HomeFragment extends StatelessWidget {
+class HomeFragment extends StatefulWidget {
   const HomeFragment({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<HomeFragment> createState() => _HomeFragmentState();
+}
+
+class _HomeFragmentState extends State<HomeFragment> {
+  bool isLike = false;
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +33,26 @@ class HomeFragment extends StatelessWidget {
       color: context.appColors.appBackground,
       child: Stack(
         children: [
-          const LiveBackgroundWidget(palette: Palette(colors: [Colors.red, Colors.green]),),
+          const LiveBackgroundWidget(
+            palette: Palette(colors: [Colors.red, Colors.green]),
+          ),
           RefreshIndicator(
             edgeOffset: TossAppBar.appBarHeight,
-            onRefresh: () async{
+            onRefresh: () async {
               await sleepAsync(500.ms);
             },
             child: SingleChildScrollView(
-              padding: const EdgeInsets.only(top: TossAppBar.appBarHeight, bottom: 50),
+              padding: const EdgeInsets.only(
+                  top: TossAppBar.appBarHeight, bottom: 50),
               child: Column(
                 children: [
+                  SizedBox(
+                    height: 250,
+                    width: 250,
+                    child: RiveLikeButton(isLike,
+                        onTapLike: (isLike) =>
+                            setState(() => this.isLike = isLike)),
+                  ),
                   BigButton(
                     "토스뱅크",
                     onTap: () {
@@ -47,7 +65,9 @@ class HomeFragment extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         "자산".text.bold.white.make(),
-                        ...bankAccounts.map((e) => BankAccountWidget(e)).toList()
+                        ...bankAccounts
+                            .map((e) => BankAccountWidget(e))
+                            .toList()
                       ],
                     ),
                   ),
